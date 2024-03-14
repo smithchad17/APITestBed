@@ -14,6 +14,9 @@ builder.Services.AddRazorComponents()
     .AddInteractiveWebAssemblyComponents();
 
 builder.Services.AddScoped<IBookRepository, BookRepository>();
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+
 
 //Seeds the database with test data
 builder.Services.AddTransient<Seed>();
