@@ -2,6 +2,8 @@ using APITestBed;
 using APITestBed.Client.Pages;
 using APITestBed.Components;
 using APITestBed.Data;
+using APITestBed.Interfaces;
+using APITestBed.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +12,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents()
     .AddInteractiveWebAssemblyComponents();
+
+builder.Services.AddScoped<IBookRepository, BookRepository>();
 
 //Seeds the database with test data
 builder.Services.AddTransient<Seed>();
