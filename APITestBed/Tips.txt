@@ -1,0 +1,6 @@
+﻿To Create a database and migrate it:
+1: In your class models, all fields will be considered as NOT NULL in the SQL Server. 
+   Put a '?' after the type to make them nullable
+2: In Package Manager Console type: Add-Migration <name of migration instance>
+3: In Package Manager Console type: Update-Database
+4: In the Developer Powershell console type: dotnet run seeddata (to run your seed file to populate the database)
